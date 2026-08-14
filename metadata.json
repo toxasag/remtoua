@@ -1,0 +1,6 @@
+{
+  "name": "TENGYA / TOUA Direct",
+  "description": "Официальный сервис и поставка газовых монтажных пистолетов GSN50 II с гарантией 5 лет",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
