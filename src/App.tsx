@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { BrandTruthSection } from './components/BrandTruthSection';
-import { WorkApplicationsSection } from './components/WorkApplicationsSection';
-import { SavingsCalculator } from './components/SavingsCalculator';
 import { ServiceCenterSection } from './components/ServiceCenterSection';
 import { CatalogSection } from './components/CatalogSection';
-import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { OrderModal } from './components/OrderModal';
 import { MasterConsultationModal } from './components/MasterConsultationModal';
@@ -53,36 +49,16 @@ export default function App() {
           onOpenVideoTest={() => setVideoModalOpen(true)}
         />
 
-        {/* 2. Brand Truth: Why GSN50 II costs 25 990 RUB */}
-        <BrandTruthSection
-          onOpenOrder={() => handleOpenOrder('gsn50-ii')}
-        />
-
-        {/* 3. Work Applications: Electricians, Ceilings, Plumbers */}
-        <WorkApplicationsSection
-          onOpenOrder={() => handleOpenOrder('gsn50-ii')}
-        />
-
-        {/* 4. ROI & Savings Calculator */}
-        <SavingsCalculator
-          onOpenOrder={() => handleOpenOrder('gsn50-ii')}
-        />
-
-        {/* 5. Service Center & 5-Year Warranty */}
-        <ServiceCenterSection
-          onOpenConsultation={() => setConsultationModalOpen(true)}
-          onOpenOrder={() => handleOpenOrder('gsn50-ii')}
-        />
-
-        {/* 6. Product & Consumables Catalog */}
+        {/* 2. Range & Catalog: Tools, Fasteners, Consumables */}
         <CatalogSection
           onOpenOrder={(pid, ext) => handleOpenOrder(pid, ext)}
           onOpenConsultation={() => setConsultationModalOpen(true)}
         />
 
-        {/* 7. FAQ */}
-        <FaqSection
+        {/* 3. Service Center & 5-Year Warranty */}
+        <ServiceCenterSection
           onOpenConsultation={() => setConsultationModalOpen(true)}
+          onOpenOrder={() => handleOpenOrder('gsn50-ii')}
         />
 
       </main>

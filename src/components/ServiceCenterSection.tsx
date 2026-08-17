@@ -1,10 +1,10 @@
 import React from 'react';
-import { Wrench, ShieldCheck, Clock, Sparkles, MapPin, CheckCircle, ArrowUpRight, Award, Flame, Phone } from 'lucide-react';
-import { SERVICE_CENTER_DATA, COMPANY_INFO } from '../data/landingData';
+import { Wrench, ShieldCheck, Clock, Sparkles, Award } from 'lucide-react';
+import { SERVICE_CENTER_DATA } from '../data/landingData';
 
 interface ServiceCenterProps {
-  onOpenConsultation: () => void;
-  onOpenOrder: () => void;
+  onOpenConsultation?: () => void;
+  onOpenOrder?: () => void;
 }
 
 export const ServiceCenterSection: React.FC<ServiceCenterProps> = ({ onOpenConsultation, onOpenOrder }) => {
@@ -42,21 +42,17 @@ export const ServiceCenterSection: React.FC<ServiceCenterProps> = ({ onOpenConsu
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">{pillar.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{pillar.text}</p>
               </div>
-              <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-slate-200 flex items-center text-xs text-orange-700 font-bold">
-                <span>Гарантийное обязательство</span>
-                <CheckCircle className="w-3.5 h-3.5 ml-1.5 text-orange-600" />
-              </div>
             </div>
           ))}
         </div>
 
-        {/* Workshop Photo and Stock Status */}
+        {/* Workshop Photo and Information */}
         <div className="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-md ring-1 ring-slate-100">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
-            {/* Left: Workshop visual & Certificate */}
-            <div className="lg:col-span-5 relative bg-slate-50 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col justify-between p-4 sm:p-8">
-              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-slate-200 shadow-xs mb-4 sm:mb-6">
+            {/* Workshop visual */}
+            <div className="lg:col-span-6 relative bg-slate-50 border-b lg:border-b-0 lg:border-r border-slate-200 p-4 sm:p-8">
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-slate-200 shadow-xs">
                 <img
                   src={SERVICE_CENTER_DATA.workshopImage}
                   alt="Сервисный центр прямого монтажа в Москве"
@@ -69,82 +65,31 @@ export const ServiceCenterSection: React.FC<ServiceCenterProps> = ({ onOpenConsu
                   </span>
                 </div>
               </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">Сервис: Hybest, Satohi, Vapp, Fixpistols, Toua</h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500">Прямые поставки узлов, оригинальные ремкомплекты и ремонт</p>
-                  </div>
-                </div>
-                <div className="p-3 sm:p-3.5 rounded-2xl bg-white border border-slate-200 text-[11px] sm:text-xs text-slate-600 shadow-2xs">
-                  <strong className="text-slate-900">Для регионов России:</strong> в случае гарантии доставка СДЭК за наш счет. Диагностика и устранение 24–48 часов.
-                </div>
-              </div>
             </div>
 
-            {/* Right: Real Spare Parts Stock Table */}
-            <div className="lg:col-span-7 p-4 sm:p-8 flex flex-col justify-between bg-white">
-              <div>
-                <div className="flex items-center justify-between gap-2 sm:gap-4 mb-4 flex-wrap">
-                  <div>
-                    <h3 className="text-base sm:text-xl font-bold text-slate-900">
-                      Наличие запчастей и ремкомплектов на складе
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
-                      Не нужно ждать месяцами из Китая — всё уже в Москве
-                    </p>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] sm:text-xs font-bold shrink-0 border border-emerald-200">
-                    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-                    Склад укомплектован
-                  </span>
+            {/* Workshop Details */}
+            <div className="lg:col-span-6 p-6 sm:p-8 space-y-5 bg-white">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                  <Award className="w-6 h-6" />
                 </div>
-
-                <div className="space-y-2 mb-6">
-                  {SERVICE_CENTER_DATA.warehouseStock.map((part, i) => (
-                    <div 
-                      key={i} 
-                      className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 text-xs"
-                    >
-                      <div className="min-w-0">
-                        <span className="font-bold text-slate-900 block truncate">{part.name}</span>
-                        <span className="text-slate-500 text-[11px]">Совместимость: {part.compatibleWith}</span>
-                      </div>
-                      <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-wrap">
-                        <span className="text-emerald-700 font-bold text-[11px] sm:text-xs">{part.stockStatus}</span>
-                        <span className="text-slate-600 bg-white border border-slate-200 px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-medium shadow-2xs">Замена: {part.repairTime}</span>
-                      </div>
-                    </div>
-                  ))}
+                <div>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900">Сервисный центр: Satohi, Hybest, Fixpistol, VAPP, Toua</h4>
+                  <p className="text-xs sm:text-sm text-slate-500">Прямые поставки оригинальных узлов, ремкомплектов и расходных материалов</p>
                 </div>
               </div>
 
-              {/* Action Strip */}
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                <div className="text-xs text-slate-600 font-medium">
-                  Нужен ремонт или ТО (Hybest, Satohi, Vapp, Fixpistols, Toua)?
+              <div className="space-y-3">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-1">
+                  <span className="font-bold text-slate-900 block">Диагностика и ремонт в Москве:</span>
+                  <p className="text-slate-600">Тестовый стенд, проверка компрессии, чистка камеры сгорания и замена бойков от 15 минут прямо при вас.</p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-                  <button
-                    onClick={onOpenConsultation}
-                    className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs border border-slate-200 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
-                  >
-                    <Phone className="w-3.5 h-3.5 text-orange-600 shrink-0" />
-                    <span>Связаться с мастером</span>
-                  </button>
-                  <button
-                    onClick={onOpenOrder}
-                    className="px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-200 uppercase tracking-tight"
-                  >
-                    <span>Купить с гарантией 5 лет</span>
-                  </button>
+
+                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-900 space-y-1">
+                  <span className="font-bold text-emerald-950 block">Для регионов России:</span>
+                  <p className="text-emerald-800">В случае гарантийного обслуживания доставка СДЭК за наш счет. Срок диагностики и устранения — 24–48 часов.</p>
                 </div>
               </div>
-
             </div>
 
           </div>

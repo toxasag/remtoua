@@ -8,43 +8,50 @@ export const COMPANY_INFO = {
   phoneClean: '+79776282049',
   telegram: 'https://t.me/toua_direct',
   whatsapp: 'https://wa.me/79776282049',
+  max: 'https://max.ru',
   workingHours: 'Пн–Сб 09:00 – 20:00, Вс 10:00 – 18:00',
   cdekDeliveryText: 'Отправка СДЭК с оплатой при получении и осмотре',
   warrantyYears: 5,
 };
 
 export const HERO_DATA = {
-  badge: 'ОБНОВЛЕННАЯ ВЕРСИЯ 2026 ГОДА С ЗАВОДА TENGYA (TOUA)',
-  title: 'Газовый монтажный пистолет GSN50 II',
-  titleSub: '(версия Toua GSN50 2-го поколения)',
-  subtitle: 'Прямой монтаж по монолиту, стали и кирпичу без проводов и бурения перфоратором. Тот же легендарный механизм с материнского завода Tengya (производитель Toua), но с доработанной поршневой группой и честной гарантией 5 лет.',
+  factoryBadge: 'Пистолеты с завода Тэянг (Tengya / Toua Direct)',
+  deliveryBadge: 'Доставка за 1 день',
+  badge: 'Пистолеты с завода Тэянг • Доставка за 1 день',
+  title: 'Газовые монтажные пистолеты по низким ценам',
+  titleSub: 'Полный модельный ряд с завода Тэянг (Tengya) для прямого монтажа',
+  directMountingText: 'Прямой монтаж по монолиту, стали и кирпичу',
+  subtitle: 'Прямой монтаж по монолиту, стали и кирпичу без проводов, шлангов и бурения перфоратором. Полный модельный ряд надежных газовых пистолетов напрямую с материнского завода Тэянг (Tengya / Toua) без розничных наценок, с доставкой за 1 день и официальной гарантией 5 лет.',
+  priceFrom: 25990,
   currentPrice: 25990,
   oldPrice: 37000,
   economy: 11010,
-  economyNote: 'Экономия 11 010 ₽ без переплаты перекупщикам за экспортную наклейку',
-  warrantyText: '5 лет от нашего сервисного центра в Москве (на обычный Toua дают всего 1–2 года)',
+  economyNote: 'Цены от 25 990 ₽ — прямая поставка без наценок дилеров и посредников',
+  deliveryText: 'Быстрая доставка за 1 день по Москве и МО, экспресс-отправка СДЭК по всей России с оплатой при получении',
+  warrantyText: 'Честная гарантия 5 лет от нашего сервисного центра в Москве (на обычный Toua дают всего 1–2 года)',
   bullets: [
     {
+      icon: 'truck',
+      title: 'Доставка за 1 день',
+      text: 'Курьером по Москве и МО день в день или экспресс СДЭК с проверкой до оплаты.',
+    },
+    {
       icon: 'zap',
-      title: 'Проверка и отстрел перед покупкой',
-      text: 'В мастерской на Марьиной Роще или при получении у курьера СДЭК до оплаты.',
+      title: 'Прямой монтаж в монолит и сталь',
+      text: '100–120 Дж энергии — 1 точка за 1 секунду без пыли и перфоратора.',
     },
     {
-      icon: 'package',
-      title: 'Полный комплект',
-      text: 'Ударопрочный кейс, 2 Li-Ion аккумулятора, быстрая зарядка, масло, ремкомплект и ключи.',
-    },
-    {
-      icon: 'wrench',
-      title: 'Запчасти всегда на складе',
-      text: 'Собственный склад в Москве: бойки, кольца, клапаны и платы розжига.',
+      icon: 'shield',
+      title: 'Гарантия 5 лет и сервис',
+      text: 'Собственная мастерская и склад оригинальных запчастей на Марьиной Роще.',
     },
   ],
   heroImage: '/src/assets/images/gsn50ii_tool_photo_1786716046497.jpg',
   gallery: [
-    { id: 'tool', title: 'Инструмент', url: '/src/assets/images/gsn50ii_tool_photo_1786716046497.jpg', label: 'GSN50 II 2-го поколения' },
-    { id: 'kit', title: 'Комплект', url: '/src/assets/images/gsn50ii_full_kit_1786716063526.jpg', label: '2 АКБ, ЗУ, кейс, масло, очки' },
-    { id: 'action', title: 'В работе', url: '/src/assets/images/gsn50ii_narrow_barrel_1786716080067.jpg', label: 'Узкий ствол под клипсы 16 мм' },
+    { id: 'tool', title: 'GSN50 II Direct', url: '/src/assets/images/gsn50ii_tool_photo_1786716046497.jpg', label: 'GSN50 II — от 25 990 ₽' },
+    { id: 'kit', title: 'Полный комплект', url: '/src/assets/images/gsn50ii_full_kit_1786716063526.jpg', label: '2 АКБ, ЗУ, кейс, масло, очки' },
+    { id: 'action', title: 'Узкий ствол', url: '/src/assets/images/gsn50ii_narrow_barrel_1786716080067.jpg', label: 'Прямой монтаж по монолиту' },
+    { id: 'framing', title: 'Toua GFN3490', url: '/src/assets/images/framing_nailer_1786714341269.jpg', label: 'Каркасный нейлер 90 мм — 31 900 ₽' },
   ],
   hotspots: [
     { label: 'Узкий ствол', desc: 'Заходит внутрь клипс гофры от 16 мм' },
@@ -161,8 +168,8 @@ export const WORK_TRADES: WorkTrade[] = [
 ];
 
 export const SERVICE_CENTER_DATA = {
-  title: 'Мы не просто дропшипперы с маркетплейса. Мы — профильный сервис по прямому монтажу в Москве.',
-  subtitle: 'Каждый пистолет проходит предпродажную подготовку, настройку клапана и тестовый отстрел на стенде нашей мастерской.',
+  title: 'Мы официальный сервисный центр Satohi, Hybest, Fixpistol, VAPP',
+  subtitle: 'Каждый пистолет проходит предпродажную подготовку, настройку клапана и тестовый отстрел на стенде нашей мастерской в Москве.',
   workshopImage: '/src/assets/images/repair_workshop_1786714326699.jpg',
   pillars: [
     {
@@ -193,7 +200,7 @@ export const SERVICE_CENTER_DATA = {
 export const PRODUCTS: ProductItem[] = [
   {
     id: 'gsn50-ii',
-    name: 'Газовый пистолет GSN50 II (Tengya / Toua Direct)',
+    name: 'Touaт GSN50 II (Электромонтаж и прямой монтаж)',
     badge: 'ФЛАГМАН ПРОДАЖ 2026',
     subtitle: 'Прямой монтаж по монолиту, бетону, металлу и кирпичу',
     category: 'tool',
@@ -289,9 +296,9 @@ export const PRODUCTS: ProductItem[] = [
 export const CONSUMABLES = [
   {
     id: 'gas-keenly-165a',
-    name: 'Газовый баллон KEENLY 165A (высокое давление с лубрикантом)',
-    price: 360,
-    priceUnit: '₽ / шт.',
+    name: 'Газовые баллоны (высокое давление с лубрикантом)',
+    price: 350,
+    priceUnit: 'от 350 ₽ / шт.',
     image: '/src/assets/images/gas_and_pins_1786714354025.jpg',
     desc: 'Стабильная работа от -15°C до +50°C, содержит синтетическую смазку, которая автоматически смазывает поршень при каждом выстреле.',
     specs: '165 мм, ~1 200 выстрелов на баллон. 100% подходит к Toua, Tengya, Hybest, Satohi, Vapp, Fixpistols.',

@@ -17,15 +17,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenOrder, onOpenConsultation 
           {/* Col 1: Brand & Guarantee */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-orange-600 text-white flex items-center justify-center font-black text-lg shadow-sm">
-                TY
+              <div className="w-9 h-9 rounded-lg bg-orange-600 text-white flex items-center justify-center font-black text-xs tracking-wider shadow-sm">
+                TOUA
               </div>
               <span className="text-xl font-black text-white tracking-tight">
-                TENGYA <span className="text-orange-500">/</span> TOUA Direct
+                TOUA
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Прямые поставки газового монтажного инструмента 2-го поколения с завода-изготовителя Tengya (КНР) и собственный авторизованный сервис в Москве.
+              Прямые поставки газового монтажного инструмента TOUA с завода-изготовителя и собственный авторизованный сервис в Москве.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-orange-400 text-xs font-bold shadow-2xs">
               <ShieldCheck className="w-4 h-4 text-orange-400" />
@@ -89,22 +89,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenOrder, onOpenConsultation 
               {COMPANY_INFO.phone}
             </a>
 
-            <div className="flex gap-2 pt-1">
+            <div className="grid grid-cols-3 gap-1.5 pt-1">
               <a
                 href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-2 px-3 rounded-lg bg-emerald-950/80 border border-emerald-700/60 text-emerald-300 hover:bg-emerald-900 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
+                className="py-2 px-1.5 rounded-lg bg-emerald-950/80 border border-emerald-700/60 text-emerald-300 hover:bg-emerald-900 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
               >
-                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> <span className="truncate">WhatsApp</span>
               </a>
               <a
                 href={COMPANY_INFO.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-2 px-3 rounded-lg bg-sky-950/80 border border-sky-700/60 text-sky-300 hover:bg-sky-900 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
+                className="py-2 px-1.5 rounded-lg bg-sky-950/80 border border-sky-700/60 text-sky-300 hover:bg-sky-900 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
               >
-                <Send className="w-3.5 h-3.5 text-sky-400" /> Telegram
+                <Send className="w-3.5 h-3.5 text-sky-400 shrink-0" /> <span className="truncate">Telegram</span>
+              </a>
+              <a
+                href={COMPANY_INFO.max}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 px-1.5 rounded-lg bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 hover:bg-indigo-900 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-indigo-400 shrink-0" /> <span className="truncate">MAX</span>
               </a>
             </div>
 
@@ -121,16 +129,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenOrder, onOpenConsultation 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} TENGYA / TOUA Direct. Официальный сервис прямого монтажа в РФ.
+            © {new Date().getFullYear()} TOUA. Официальный сервис прямого монтажа в РФ.
           </div>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-3 gap-y-1 text-[11px] text-slate-400">
-            <span>GSN50 II Direct 25 990 ₽</span>
+            <span>GSN50 II 25 990 ₽</span>
             <span>•</span>
             <span>Toua GFN3490</span>
             <span>•</span>
             <span>Toua GSN50D</span>
             <span>•</span>
-            <span>Keenly 165A</span>
+            <span>Газовые баллоны 165 мм</span>
           </div>
         </div>
       </div>

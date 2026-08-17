@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Check, ShieldCheck, Zap, Sparkles, Plus, Minus, PackageCheck, ArrowRight, Layers, HelpCircle } from 'lucide-react';
+import { ShoppingCart, Check, ShieldCheck, Zap, Sparkles, ArrowRight, Layers, HelpCircle } from 'lucide-react';
 import { PRODUCTS, CONSUMABLES } from '../data/landingData';
 import { ProductItem } from '../types';
 
@@ -10,15 +10,6 @@ interface CatalogProps {
 
 export const CatalogSection: React.FC<CatalogProps> = ({ onOpenOrder, onOpenConsultation }) => {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
-  const [gasCount, setGasCount] = useState<number>(2);
-  const [nailsCount, setNailsCount] = useState<number>(2);
-  const [nailsType, setNailsType] = useState<string>('19 мм (электромонтаж / потолки)');
-
-  const gsn50Price = 25990;
-  const gasPrice = 360;
-  const nailsPrice = 590;
-
-  const kitTotalPrice = gsn50Price + gasCount * gasPrice + nailsCount * nailsPrice;
 
   return (
     <section id="catalog" className="py-16 sm:py-24 bg-slate-50 relative border-b border-slate-200">
@@ -34,7 +25,7 @@ export const CatalogSection: React.FC<CatalogProps> = ({ onOpenOrder, onOpenCons
             Каталог инструмента и расходных материалов
           </h2>
           <p className="text-base text-slate-600">
-            Оригинальные пистолеты с завода и фирменные расходники Keenly / Toua в наличии на складе в Москве.
+            Оригинальные пистолеты с завода и фирменные расходники Toua в наличии на складе в Москве.
           </p>
         </div>
 
@@ -201,140 +192,6 @@ export const CatalogSection: React.FC<CatalogProps> = ({ onOpenOrder, onOpenCons
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Master's Complete Kit Quick Configurator */}
-        <div className="rounded-3xl bg-white border-2 border-orange-500 p-4 sm:p-8 lg:p-10 shadow-md ring-1 ring-orange-200">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-            
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-bold">
-                <Sparkles className="w-3.5 h-3.5 text-orange-600 shrink-0" />
-                <span>Готовый комплект мастера под ключ</span>
-              </div>
-              <h3 className="text-xl sm:text-3xl font-black text-slate-900">
-                Соберите комплект GSN50 II с баллонами и гвоздями
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Выберите нужное количество расходников для вашего объема работ и получите готовый к работе инструмент с гарантией 5 лет.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                {/* Gas canisters counter */}
-                <div className="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div>
-                    <span className="text-xs font-bold text-slate-900 block">Газовые баллоны KEENLY 165A (360 ₽/шт)</span>
-                    <span className="text-[11px] text-slate-500">1 баллон = до 1 200 выстрелов со смазкой</span>
-                  </div>
-                  <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-                    <button
-                      onClick={() => setGasCount(Math.max(0, gasCount - 1))}
-                      className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold shadow-2xs cursor-pointer"
-                      aria-label="Уменьшить количество баллонов"
-                    >
-                      <Minus className="w-3.5 h-3.5" />
-                    </button>
-                    <span className="w-12 text-center font-bold text-xs sm:text-sm text-slate-900">{gasCount} шт</span>
-                    <button
-                      onClick={() => setGasCount(gasCount + 1)}
-                      className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold shadow-2xs cursor-pointer"
-                      aria-label="Увеличить количество баллонов"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Nails boxes counter */}
-                <div className="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <span className="text-xs font-bold text-slate-900 block">Усиленные гвозди по бетону (590 ₽ / 1000 шт)</span>
-                    <select
-                      value={nailsType}
-                      onChange={(e) => setNailsType(e.target.value)}
-                      className="mt-1 bg-white border border-slate-300 text-[11px] text-slate-800 rounded px-2 py-1 shadow-2xs font-medium max-w-full truncate"
-                    >
-                      <option value="19 мм (электромонтаж / потолки)">19 мм (электромонтаж / потолки)</option>
-                      <option value="22 мм (монолит / багет)">22 мм (монолит / багет)</option>
-                      <option value="25 мм (штукатурка / стяжка)">25 мм (штукатурка / стяжка)</option>
-                      <option value="32 мм (сантехника / перфолента)">32 мм (сантехника / перфолента)</option>
-                    </select>
-                  </div>
-                  <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-                    <button
-                      onClick={() => setNailsCount(Math.max(0, nailsCount - 1))}
-                      className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold shadow-2xs cursor-pointer"
-                      aria-label="Уменьшить количество гвоздей"
-                    >
-                      <Minus className="w-3.5 h-3.5" />
-                    </button>
-                    <span className="w-12 text-center font-bold text-xs sm:text-sm text-slate-900">{nailsCount} тыс.</span>
-                    <button
-                      onClick={() => setNailsCount(nailsCount + 1)}
-                      className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold shadow-2xs cursor-pointer"
-                      aria-label="Увеличить количество гвоздей"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Kit Summary */}
-            <div className="lg:col-span-5 p-4 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-              <div className="space-y-3 mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Состав вашего заказа:</span>
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between text-slate-800">
-                    <span>Пистолет GSN50 II (полный комплект)</span>
-                    <span className="font-bold">25 990 ₽</span>
-                  </div>
-                  {gasCount > 0 && (
-                    <div className="flex justify-between text-slate-600">
-                      <span>Газ Keenly 165A ({gasCount} шт × 360 ₽)</span>
-                      <span>{(gasCount * 360).toLocaleString('ru-RU')} ₽</span>
-                    </div>
-                  )}
-                  {nailsCount > 0 && (
-                    <div className="flex justify-between text-slate-600">
-                      <span>Гвозди {nailsType.split(' ')[0]} ({nailsCount} тыс. шт)</span>
-                      <span>{(nailsCount * 590).toLocaleString('ru-RU')} ₽</span>
-                    </div>
-                  )}
-                  <div className="flex justify-between text-emerald-700 font-bold pt-1 border-t border-slate-200">
-                    <span>Гарантия 5 лет + ТО</span>
-                    <span>БЕСПЛАТНО</span>
-                  </div>
-                  <div className="flex justify-between text-emerald-700 font-bold">
-                    <span>Тестовый отстрел перед оплатой</span>
-                    <span>БЕСПЛАТНО</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-baseline justify-between mb-4 pt-3 border-t border-slate-200">
-                  <span className="text-xs uppercase font-bold text-slate-500">Итоговая стоимость:</span>
-                  <span className="text-2xl sm:text-3xl font-black text-orange-600">
-                    {kitTotalPrice.toLocaleString('ru-RU')} ₽
-                  </span>
-                </div>
-
-                <button
-                  onClick={() => onOpenOrder('gsn50-ii', { gasCount, nailsCount, nailsType })}
-                  className="w-full py-3.5 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm sm:text-base transition-all shadow-md shadow-orange-200 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-tight"
-                >
-                  <PackageCheck className="w-5 h-5 shrink-0" />
-                  <span>Оформить этот комплект</span>
-                </button>
-                <p className="text-[11px] text-center text-slate-500 mt-2 font-medium">
-                  Оплата после проверки и отстрела при получении
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
 

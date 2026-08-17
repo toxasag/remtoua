@@ -54,16 +54,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, onOpenConsultation 
           {/* Logo & Subtitle */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
             <a href="#" className="flex items-center gap-2 sm:gap-2.5 group min-w-0">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center font-black text-base sm:text-xl tracking-tighter shadow-md shadow-orange-200 group-hover:scale-105 transition-transform shrink-0">
-                TY
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center font-black text-xs sm:text-sm tracking-wider shadow-md shadow-orange-200 group-hover:scale-105 transition-transform shrink-0">
+                TOUA
               </div>
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap">
                   <span className="text-base sm:text-xl lg:text-2xl font-black tracking-tight text-slate-900 truncate">
-                    TENGYA <span className="text-orange-600">/</span> TOUA
-                  </span>
-                  <span className="text-[10px] bg-orange-100 text-orange-700 border border-orange-200 px-1 py-0.2 rounded font-mono font-bold tracking-normal hidden sm:inline-block">
-                    Direct
+                    TOUA
                   </span>
                 </div>
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-slate-500 hidden md:block truncate">
@@ -77,33 +74,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, onOpenConsultation 
               <MapPin className="w-4 h-4 text-orange-600 shrink-0" />
               <div>
                 <p className="font-bold text-slate-900 truncate">Москва, 3-й пр-д Марьиной Рощи, 40с1</p>
-                <p className="text-[11px] text-slate-500">Мастерская, отстрел и склад</p>
               </div>
             </div>
           </div>
-
-          {/* Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-xs xl:text-sm font-semibold text-slate-600 shrink-0">
-            <button onClick={() => scrollToSection('truth')} className="hover:text-orange-600 transition-colors cursor-pointer">
-              Почему дешевле
-            </button>
-            <button onClick={() => scrollToSection('applications')} className="hover:text-orange-600 transition-colors cursor-pointer">
-              Для каких работ
-            </button>
-            <button onClick={() => scrollToSection('service')} className="hover:text-orange-600 transition-colors flex items-center gap-1 cursor-pointer">
-              <span>Сервис 5 лет</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
-            </button>
-            <button onClick={() => scrollToSection('catalog')} className="hover:text-orange-600 transition-colors cursor-pointer">
-              Каталог и цены
-            </button>
-            <button onClick={() => scrollToSection('calculator')} className="hover:text-orange-600 transition-colors cursor-pointer">
-              Калькулятор
-            </button>
-            <button onClick={() => scrollToSection('faq')} className="hover:text-orange-600 transition-colors cursor-pointer">
-              FAQ
-            </button>
-          </nav>
 
           {/* Contact and CTA */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
@@ -133,6 +106,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, onOpenConsultation 
                   className="text-sky-600 hover:text-sky-700 font-semibold transition-colors flex items-center gap-0.5"
                 >
                   <Send className="w-3 h-3" /> Telegram
+                </a>
+                <span className="text-slate-300">•</span>
+                <a 
+                  href={COMPANY_INFO.max} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:text-indigo-700 font-semibold transition-colors flex items-center gap-0.5"
+                >
+                  <MessageSquare className="w-3 h-3 text-indigo-600" /> MAX
                 </a>
               </div>
             </div>
@@ -171,24 +153,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, onOpenConsultation 
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <button onClick={() => scrollToSection('truth')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Почему дешевле
-            </button>
-            <button onClick={() => scrollToSection('applications')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Для каких работ
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            <button onClick={() => scrollToSection('catalog')} className="text-left py-2.5 px-3 rounded-lg bg-orange-50 border border-orange-300 text-slate-900 font-bold flex items-center justify-between">
+              <span>Каталог оборудования</span>
+              <span className="text-xs text-orange-600 font-extrabold">от 25 990 ₽ →</span>
             </button>
             <button onClick={() => scrollToSection('service')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Сервис 5 лет
-            </button>
-            <button onClick={() => scrollToSection('catalog')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Каталог и расходка
-            </button>
-            <button onClick={() => scrollToSection('calculator')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Калькулятор
-            </button>
-            <button onClick={() => scrollToSection('faq')} className="text-left py-2.5 px-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-semibold">
-              Вопросы и ответы
+              Сервисный центр в Москве
             </button>
           </div>
 

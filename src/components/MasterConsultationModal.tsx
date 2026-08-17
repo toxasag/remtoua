@@ -71,25 +71,35 @@ export const MasterConsultationModal: React.FC<MasterConsultationModalProps> = (
             </div>
 
             {/* Instant Messenger buttons */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-2">
               <a
                 href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-2xs"
+                className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-600" />
-                <span>Чат в WhatsApp</span>
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="truncate">WhatsApp</span>
               </a>
 
               <a
                 href={COMPANY_INFO.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-sky-50 border border-sky-200 hover:bg-sky-100 text-sky-800 font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-2xs"
+                className="p-2.5 rounded-xl bg-sky-50 border border-sky-200 hover:bg-sky-100 text-sky-800 font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
               >
-                <Send className="w-4 h-4 text-sky-600" />
-                <span>Чат в Telegram</span>
+                <Send className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+                <span className="truncate">Telegram</span>
+              </a>
+
+              <a
+                href={COMPANY_INFO.max}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-200 hover:bg-indigo-100 text-indigo-800 font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                <span className="truncate">MAX</span>
               </a>
             </div>
 
